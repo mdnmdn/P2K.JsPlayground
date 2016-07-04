@@ -27,7 +27,7 @@ namespace P2K.WebApp.Controllers.Api
     */
     public class CategoriesController : ODataController
     {
-        private NorthwindConnection db = new NorthwindConnection();
+        private NorthwindDataContext db = new NorthwindDataContext();
 
         // GET: odata/Categories
         [EnableQuery]

@@ -22,7 +22,7 @@ namespace P2K.WebApp.Controllers.Api
     */
     public class CustomersController : ODataController
     {
-        private NorthwindConnection db = new NorthwindConnection();
+        private NorthwindDataContext db = new NorthwindDataContext();
 
         // GET: odata/Customers
         [EnableQuery]

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P2K.WebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,10 @@ namespace P2K.WebApp.Controllers
     {
         public ActionResult Index()
         {
+            using (var ctx = new NorthwindDataContext())
+            {
+                ViewBag.Categories = ctx.Categories.Count();
+            }
             return View();
         }
 

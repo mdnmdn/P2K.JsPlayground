@@ -13,10 +13,10 @@ namespace P2K.WebApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NorthwindConnection : DbContext
+    public partial class NorthwindDataContext : DbContext
     {
-        public NorthwindConnection()
-            : base("name=NorthwindConnection")
+        public NorthwindDataContext()
+            : base("name=NorthwindDataContext")
         {
         }
     
