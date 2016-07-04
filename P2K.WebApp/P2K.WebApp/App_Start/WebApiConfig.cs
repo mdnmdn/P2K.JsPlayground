@@ -27,7 +27,6 @@ namespace P2K.WebApp
             builder.EntitySet<Shipper>("Shippers"); 
             config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
 
-            config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
