@@ -1,7 +1,7 @@
 ﻿"use strict";
 // Immediately Invoked Function
 //(function () {
-    console.log('Run!');
+    //console.log('Run!');
 
     var obj = {};
 
