@@ -6,21 +6,19 @@
     categories (@ViewBag.Categories)
 -->
 <div class="jumbotron">
-    <p>
-        Data offered by <a href="https://northwinddatabase.codeplex.com/">Northwind</a> database
-    </p>
+    <h2>JS API</h2>
 </div>
 
-<div class="row">
+<div class="row ul-links">
     <div class="col-md-4">
         <h2>Utils API</h2>
         <ul>
             @{var url = Url.Content("~/Tools/Now");}
             <li>Text Date: <a href="@url">@url</a></li>
-            
+
             @{url = Url.Content("~/Tools/Tomorrow");}
             <li>Text Date: <a href="@url">@url</a></li>
-            
+
             @{url = Url.Content("~/Tools/Random/100");}
             <li>JSON Random number: <a href="@url">@url</a></li>
 
@@ -35,6 +33,21 @@
 
         </ul>
     </div>
+    <div class="col-md-4">
+        <h2>Guess a number API</h2>
+        <ul>
+            @{url = Url.Content("~/GuessNumber/Reset");}
+            <li>Reset game (POST): <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/GuessNumber/Trials");}
+            <li>Get actual trials: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/GuessNumber/Guess");}
+            <li>Guest a number (POST with <em>number</em> param): <a href="@url">@url</a></li>
+
+
+        </ul>
+    </div>
     <!--
     <div class="col-md-4">
         <h2>HTML API</h2>
@@ -45,11 +58,35 @@
     </div>
     -->
     <div class="col-md-4">
-        <h2>ODATA</h2>
+        <h2>ODATA - northwind</h2>
         <ul>
             @{url = Url.Content("~/odata/");}
             <li>Root: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Customers");}
+            <li>Customers: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Customers('FRANS')");}
+            <li>Customer <em>FRANS</em>: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Customers('FRANS')?$expand=Orders");}
+            <li>Customer <em>FRANS</em> with Orders: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Orders");}
+            <li>Orders: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Orders(11026)?$expand=OrderDetails");}
+            <li>Order with details: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/odata/Products?$expand=Category");}
+            <li>Products with categories: <a href="@url">@url</a></li>
         </ul>
+        <p>
+            OData <a href="http://www.odata.org/documentation/odata-version-3-0/url-conventions/">docs</a> 
+        </p>
+        <p>
+            Data offered by <a href="https://northwinddatabase.codeplex.com/">Northwind</a> database
+        </p>
     </div>
     
 </div>

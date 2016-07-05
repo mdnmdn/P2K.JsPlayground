@@ -22,3 +22,50 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.ul-links li a {
+display: block;
+margin-left: 2em;
+}
+
+/* *****************   badges ************************** */
+.show-badge:after{
+  position: fixed; 
+  
+  width: 120px;
+  padding: 2px 0;
+  text-align:center;
+  background: #000;
+  color: #eee;
+
+
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 10000;
+
+
+  top: 21px; right: -26px;
+  /*top: 21px; left:-26px;
+    bottom: 21px; right:-26px;*/
+
+
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+    
+  /*-moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); */
+
+  background-color: #FFBF00; color:#00A; content: 'local';
+}
+
+
+
+.show-badge.online:after { content: 'online';background-color: #ffd800; color:#000; }
