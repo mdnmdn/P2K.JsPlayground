@@ -1,31 +1,55 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
+<!--
+    categories (@ViewBag.Categories)
+-->
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p> (@ViewBag.Categories)
+    <p>
+        Data offered by <a href="https://northwinddatabase.codeplex.com/">Northwind</a> database
+    </p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h2>Utils API</h2>
+        <ul>
+            @{var url = Url.Content("~/Tools/Now");}
+            <li>Text Date: <a href="@url">@url</a></li>
+            
+            @{url = Url.Content("~/Tools/Tomorrow");}
+            <li>Text Date: <a href="@url">@url</a></li>
+            
+            @{url = Url.Content("~/Tools/Random/100");}
+            <li>JSON Random number: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/Tools/Guid");}
+            <li>JSON GUID: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/Tools/GetEcho?name=Pippo&action=go");}
+            <li>JSON Query string params echo: <a href="@url">@url</a></li>
+
+            @{url = Url.Content("~/Tools/PostEcho");}
+            <li>JSON POST params echo: <a href="@url">@url</a></li>
+
+        </ul>
     </div>
+    <!--
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>HTML API</h2>
+        <ul>
+            @{url = Url.Content("~/Customer/List");}
+            <li>Customers: <a href="@url">@url</a></li>
+        </ul>
     </div>
+    -->
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>ODATA</h2>
+        <ul>
+            @{url = Url.Content("~/odata/");}
+            <li>Root: <a href="@url">@url</a></li>
+        </ul>
     </div>
+    
 </div>

@@ -11,6 +11,7 @@ namespace P2K.WebApp.Controllers
     {
         public ActionResult Index()
         {
+            // test connection
             using (var ctx = new NorthwindDataContext())
             {
                 ViewBag.Categories = ctx.Categories.Count();
@@ -18,18 +19,6 @@ namespace P2K.WebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+     
     }
 }

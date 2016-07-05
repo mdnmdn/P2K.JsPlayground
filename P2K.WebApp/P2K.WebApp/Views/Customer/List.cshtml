@@ -1,0 +1,17 @@
+﻿@model List<P2K.WebApp.Models.Customer>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table class="table table-bordered table-condensed table-hover table-striped"  >
+    <tr>
+        <th>ID</th>
+    </tr>
+    @foreach (var elem in Model) { 
+    <tr>
+        <td>@elem.CustomerID</td>
+    </tr>
+    }
+</table>
