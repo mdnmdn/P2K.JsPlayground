@@ -25,6 +25,7 @@ namespace P2K.JsPlayground.WebApp
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/Scripts/app/objects.js",
+                      "~/Scripts/app/northwind.js",
                       "~/Scripts/app/ajax1.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

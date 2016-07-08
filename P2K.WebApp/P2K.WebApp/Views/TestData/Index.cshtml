@@ -1,0 +1,15 @@
+﻿@model List<P2K.WebApp.Models.Order>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Ordini Caricati: @Model.Count/@ViewBag.Orders.Count
+
+<ul>
+    @foreach (var order in Model)
+    {
+       <li>@order.OrderID - @order.OrderDate</li>
+    }
+</ul>

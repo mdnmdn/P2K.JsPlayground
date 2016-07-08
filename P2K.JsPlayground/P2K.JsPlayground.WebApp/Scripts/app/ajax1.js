@@ -1,46 +1,30 @@
 ﻿"use strict";
 // Immediately Invoked Function
 (function () {
-    
+    //console.log('Run!');
 
-    var showTime = {
-        init: function() {
-            $('#btnShowTime').on('click', showTime.callTimeAjax);
-            showTime.callTimeAjax();
+    var timeAjax = {
 
-            console.log('ajax1 init');
+        init: function () {
+            $('#btnShowTime').on('click', timeAjax.requestTime);
+            timeAjax.requestTime();
+            //console.log('init ok');
         },
 
-        callTimeAjax: function (event) {
-            if(event) event.preventDefault();
+        requestTime: function (ev) {
+            if (ev) ev.preventDefault();
 
             var url = 'http://p2k.smarthings.net/Tools/Now';
-            $.get(url, showTime.onTimeAjaxCompleted);
+            $.get(url, timeAjax.updateTime);
             $('#timeContainer').html('loading...');
         },
 
-        onTimeAjaxCompleted: function(data){
-            //console.log('onTimeAjaxCompleted', data);
+        updateTime: function (data) {
             $('#timeContainer').html(data);
         }
-
     };
-    
 
-    $(showTime.init);
-
-
-
-    //$('#btnShowTime').on('click', function (event) {
-    //    event.preventDefault();
-
-    //    var url = 'http://p2k.smarthings.net/Tools/Now';
-    //    $.get(url, function (data) {
-    //        $('#timeContainer').html(data);
-    //    });
-    //    $('#timeContainer').html('loading...');
-    //});
-
+    $(timeAjax.init);
 
 })();
 
