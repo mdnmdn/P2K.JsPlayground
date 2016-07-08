@@ -27,6 +27,11 @@
             customerList.loadApiData();
         },
 
+        show: function (customerId) {
+            $('#customer-list').show();
+            
+            // refresh ajax data
+        },
 
         loadApiData: function () {
             $.ajax({
@@ -46,6 +51,11 @@
                 //console.log(this);
 
                 var row = $('<tr></tr>');
+                row.attr('id', 'row-' + this.CustomerID)
+                    .attr('data-id', this.CustomerID)
+                    .data('id', this.CustomerID);
+
+                var cmdCell = common.addCell(row,'');
                 //row.append($('<td></td>').html(this.CustomerID));
                 common.addCell(row, this.CustomerID);
                 common.addCell(row, this.CompanyName);
@@ -54,14 +64,54 @@
                 common.addCell(row, this.City);
 
                 table.append(row);
+
+
+                var detailLink = $('<a href="#"></a>').html('<span class="glyphicon glyphicon-search"></span>');
+                var ordersLink = $('<a href="#"></a>').html('<span class="glyphicon glyphicon-tasks"></span>');
+
+                detailLink.on('click', customerList.showDetail.bind(null, this.CustomerID));
+                ordersLink.on('click', customerList.showOrders.bind(null, this.CustomerID));
+
+                cmdCell.append(detailLink);
+                cmdCell.append(ordersLink);
             });
 
             console.log('preparing done');
+        },
+
+        showDetail: function(customerId){
+            $('#customer-list').hide();
+            customerDetail.show(customerId);
+        },
+
+        showOrders: function(customerId){
+            console.log("showOrders", customerId);
         }
+
     };
 
+
+    var customerDetail = {
+
+        init: function(){
+            $('#btn-show-customer-list').on('click',customerDetail.backToList);
+        },
+
+        show: function (customerId) {
+            $('#customer-detail').show();
+
+            console.log('customer-detail.show', customerId);
+            // load ajax data
+        },
+
+        backToList: function () {
+            $('#customer-detail').hide();
+            customerList.show();
+        }
+    };
    
     $(customerList.init);
+    $(customerDetail.init);
 
 })();
 
